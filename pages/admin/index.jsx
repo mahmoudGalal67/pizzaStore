@@ -11,7 +11,7 @@ const Index = ({ orders, products }) => {
     console.log(id);
     try {
       const res = await axios.delete(
-        "https://pizzastore-flax.vercel.app/api/products/" + id
+        "https://pizzastore-pearl.vercel.app/api/products/" + id
       );
       setPizzaList(pizzaList.filter((pizza) => pizza._id !== id));
     } catch (err) {
@@ -25,7 +25,7 @@ const Index = ({ orders, products }) => {
 
     try {
       if(currentStatus<2){
-      const res = await axios.put("https://pizzastore-flax.vercel.app/api/orders/" + id, {
+      const res = await axios.put("https://pizzastore-pearl.vercel.app/api/orders/" + id, {
         status: currentStatus + 1,
       });
       setOrderList([
@@ -122,8 +122,8 @@ export const getServerSideProps = async (ctx) => {
     };
   }
 
-  const productRes = await axios.get("https://pizzastore-flax.vercel.app/api/products");
-  const orderRes = await axios.get("https://pizzastore-flax.vercel.app/api/orders");
+  const productRes = await axios.get("https://pizzastore-pearl.vercel.app/api/products");
+  const orderRes = await axios.get("https://pizzastore-pearl.vercel.app/api/orders");
 
   return {
     props: {

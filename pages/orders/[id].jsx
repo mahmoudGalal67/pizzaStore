@@ -114,7 +114,7 @@ const Order = ({ order }) => {
 };
 
 export const getServerSideProps = async ({ params }) => {
-  const res = await axios.get(`https://pizzastore-flax.vercel.app/api/orders/${params.id}`);
+  const res = await axios.get(`https://pizzastore-pearl.vercel.app/api/orders/${params.id}`);
   return {
     props: { order: res.data },
   };
